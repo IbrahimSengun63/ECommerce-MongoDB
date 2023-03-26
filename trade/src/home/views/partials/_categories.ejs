@@ -1,0 +1,22 @@
+<div class="cat-design-1">
+    <section class="panel">
+        <header class="panel-heading">
+            Category
+        </header>
+        <div class="panel-body">
+            <ul class="nav prod-cat">
+                <% categories.forEach(category => { %>
+        
+                    <li>
+                        <a href="/home/<%=category%>/1" class=<%=activeCategory != undefined && activeCategory == category ? 'active' : ''%> ><i class="fa fa-angle-right"></i><%-category%></a>
+                    </li>
+    
+                <% }) %>
+                
+            </ul>
+        </div>
+    </section>    
+</div>
+
+
+

@@ -1,0 +1,16 @@
+<div class="container bootdey">
+    <div class="col-md-3">
+        
+        <%-include('./partials/_categories.ejs')%>
+        <%-include('./partials/_filter.ejs')%>
+        <%-include('./partials/_bestseller.ejs')%>
+
+    </div>
+    <div class="col-md-9">
+        <%-include('./partials/_pagenation.ejs')%>
+        <div class="row product-list">
+            <%-include('./partials/_products.ejs')%>
+        </div>
+        <%-include('./partials/_pagenation.ejs')%>
+    </div>
+</div>

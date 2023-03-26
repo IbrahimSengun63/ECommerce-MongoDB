@@ -1,0 +1,59 @@
+<% products.forEach(product=> { %>
+
+
+    <div class="col-sm-6 col-md-4 box-product-outer">
+        
+        <div class="box-product">
+            
+            <div class="img-wrapper">
+                <a href="/product/<%=product.productName%>">
+                    <img  alt="Product" src="/admin/src/product/uploads/products/<%-product.image%>">
+                </a>
+                <div class="tags">
+                    <span class="label-tags"><span class="label label-danger">Sale</span></span>
+                    <span class="label-tags"><span class="label label-info">Featured</span></span>
+                    <span class="label-tags"><span class="label label-warning">Polo</span></span>
+                </div>
+
+            </div>
+
+            <h6>
+                <a href="/product/<%=product.productName%>">
+                <%-product.productName%>
+                </a>
+            </h6>
+            <div class="price">
+                <span class="price-old">
+                    ₺<%-product.price%>
+                </span>
+                <span class="price-down">
+                    -%<%-product.discount%>
+                </span>
+                <div>
+                    ₺<%-product.netPrice%>
+                </div>
+            </div>
+            
+            <div class="rating">
+                <i class="ace-icon fa fa-star"></i>
+                <i class="ace-icon fa fa-star"></i>
+                <i class="ace-icon fa fa-star"></i>
+                <i class="ace-icon fa fa-star"></i>
+                <i class="ace-icon fa fa-star-half-o"></i>
+                <a href="#">(2 reviews)</a>
+            </div>
+            
+            <div class="extra">
+                <div class="mt-3 "> <button class="btn btn5">ADD TO CART</button>
+                </div>
+                <div class="mt-3"> <button class="btn btn5">Buy Now</button> </div>
+            </div>
+            
+        
+        </div>
+        
+    </div>
+
+
+
+    <% }) %>

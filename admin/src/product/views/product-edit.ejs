@@ -1,0 +1,89 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<form class="form-horizontal" action="/admin/product/edit/done" method="POST" enctype="multipart/form-data">
+<fieldset>
+    
+<!-- Form Name -->
+<legend>PRODUCTS</legend>
+
+<input type="hidden" name="id" value="<%=product._id%>">
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="product_name">PRODUCT NAME</label>  
+  <div class="col-md-4">
+  <input id="name" name="productName"  value="<%=product.productName%>" class="form-control input-md" required="" type="text">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="category">PRODUCT CATEGORY</label>  
+  <div class="col-md-4">
+  <input id="category" name="category" value="<%=product.category%>" class="form-control input-md" required="" type="text">
+    
+  </div>
+</div>
+
+<!-- Textarea -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="product_description">PRODUCT DESCRIPTION</label>
+  <div class="col-md-4">                     
+    <textarea class="form-control" id="description" name="description"><%=product.description%></textarea>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="discount">PRICE</label>  
+  <div class="col-md-4">
+  <input id="price" name="price" value="<%=product.price%>"class="form-control input-md" required="" type="text">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="discount">DISCOUNT</label>  
+  <div class="col-md-4">
+  <input id="discount" name="discount" value="<%=product.discount%>" class="form-control input-md" required="" type="text">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="stock">STOCK</label>  
+  <div class="col-md-4">
+  <input id="stock" name="stock" value="<%=product.stock%>" class="form-control input-md" required="" type="text">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="SHOP">SHOP</label>  
+  <div class="col-md-4">
+  <input id="shop" name="shop" value="<%=product.shop%>" class="form-control input-md" required="" type="text">
+    
+ <!-- File Button --> 
+<div class="form-group">
+  <label class="col-md-4 control-label" for="image">image</label>
+  <div class="col-md-4">
+    <input id="image" name="image" value="" class="input-file" type="file">
+  </div>
+</div>
+
+
+<!-- Button -->
+<div class="form-group">
+  <div class="col-md-4">
+    <button type="submit" class="btn btn-primary">Save</button>
+  </div>
+  </div>
+
+</fieldset>
+</form>

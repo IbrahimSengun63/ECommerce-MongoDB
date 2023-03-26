@@ -1,0 +1,92 @@
+<section class="panel">
+    <div class="panel-body">
+        <div class="pull-right">
+            <ul class="pagination pagination-sm pro-page-list">
+
+                <% if (activeCategory === undefined) { %>
+                 
+                    <% if (Number(page) === 1) { %>
+                        <li class="page-item disabled"><a href="#">«</a></li>
+                        <% let previousPage = page - 1 %>
+                        <li class="page-item disabled"><a href="/home/<%=previousPage%>">←</a></li>
+                    <% } else{ %>
+                        <li><a href="/home/1">«</a></li>
+                        <% let previousPage = page - 1 %>
+                        <li><a href="/home/<%=previousPage%>">←</a></li> 
+                         
+                    <% } %>
+                    
+                    <% let i = (Number(page) > 3 ? Number(page) - 2 : 1) %>
+                    <% if (i !== 1) { %>
+                        <li class="page-item disabled"><a>...</a></li>
+                    <% } %> 
+                    
+                    <% for (; i <= (Number(page) + 2) && i <= totalPages; i++) { %>
+                        <% if (i === Number(page)) { %>
+                            <li class="page-item active"><a><%= i %></a></li>
+                        <% } else { %>
+                            <li><a href="/home/<%= i %>"><%= i %></a></li>
+                        <% } %>
+                        <% if (i === Number(page) + 2 && i < totalPages) { %>
+                            <li class="page-item disabled"><a>...</a></li>
+                        <% } %>
+                    <% } %>
+    
+                    <% if (Number(page) === totalPages) { %>
+                        <li class="page-item disabled"><a>»</a></li>
+                        <% let nextPage = Number(page) + 1 %>
+                        <li class="page-item disabled"><a href="/home/<%=nextPage%>">→</a></li>
+                    <% } else { %>
+                        <% let nextPage = Number(page) + 1 %>
+                        <li><a href="/home/<%=nextPage%>">→</a></li>
+                        <li><a href="/home/<%= totalPages %>">»</a></li>
+                    <% } %>
+
+                <% } else { %>
+                
+                    <% if (Number(page) === 1) { %>
+                        <li class="page-item disabled"><a href="#">«</a></li>
+                        <% let previousPage = page - 1 %>
+                        <li class="page-item disabled"><a href="/home/<%=activeCategory%>/<%=previousPage%>">←</a></li>
+                    <% } else{ %>
+                        <li><a href="/home/<%=activeCategory%>/1">«</a></li>
+                        <% let previousPage = page - 1 %>
+                        <li><a href="/home/<%=activeCategory%>/<%=previousPage%>">←</a></li> 
+                         
+                    <% } %>
+                    
+                    <% let i = (Number(page) > 3 ? Number(page) - 2 : 1) %>
+                    <% if (i !== 1) { %>
+                        <li class="page-item disabled"><a>...</a></li>
+                    <% } %> 
+                    
+                    <% for (; i <= (Number(page) + 2) && i <= totalPages; i++) { %>
+                        <% if (i === Number(page)) { %>
+                            <li class="page-item active"><a><%= i %></a></li>
+                        <% } else { %>
+                            <li><a href="/home/<%=activeCategory%>/<%= i %>"><%= i %></a></li>
+                        <% } %>
+                        <% if (i === Number(page) + 2 && i < totalPages) { %>
+                            <li class="page-item disabled"><a>...</a></li>
+                        <% } %>
+                    <% } %>
+    
+                    <% if (Number(page) === totalPages) { %>
+                        <li class="page-item disabled"><a>»</a></li>
+                        <% let nextPage = Number(page) + 1 %>
+                        <li class="page-item disabled"><a href="/home/<%=activeCategory%>/<%=nextPage%>">→</a></li>
+                    <% } else { %>
+                        <% let nextPage = Number(page) + 1 %>
+                        <li><a href="/home/<%=activeCategory%>/<%=nextPage%>">→</a></li>
+                        <li><a href="/home/<%=activeCategory%>/<%= totalPages %>">»</a></li>
+                    <% } %>
+                
+                <% } %>
+
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+

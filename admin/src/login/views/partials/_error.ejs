@@ -1,0 +1,31 @@
+<% validation_errors.forEach(error=> { %>
+
+    <div class="card bg-danger text-white shadow">
+        <div class="card-body">
+            <%- error.msg %>
+        </div>
+    </div>
+
+    <% }) %>
+
+
+<% passport_login_errors.forEach(error=> { %>
+
+    <div class="card bg-danger text-white shadow">
+        <div class="card-body">
+                <%- error %>
+        </div>
+    </div>
+
+    <% }) %>        
+
+<% verify_errors.forEach(error=> { %>
+
+    <div class="card bg-danger text-white shadow">
+        <div class="card-body">
+                <%- error.msg %>
+        </div>
+    </div>
+    
+        
+    <% }) %>        
